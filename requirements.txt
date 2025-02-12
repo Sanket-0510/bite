@@ -10,4 +10,4 @@ uvicorn
 tortoise-orm
 aerich
 asyncpg
-enum
+
