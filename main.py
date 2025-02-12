@@ -14,6 +14,8 @@ from tortoise.transactions import in_transaction
 from tortoise.expressions import Q
 from redis.asyncio import Redis
 import json
+import os
+import uvicorn
 app = FastAPI()
 
 
@@ -166,3 +168,8 @@ async def user_login(request: LoginRequest):
     token = create_jwt_token({"sub": user.email})
     return {"user": {"id": user.id, "name": user.name, "email": user.email, "token": token}}
 
+
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Render assigns a dynamic port
+    uvicorn.run(app, host="0.0.0.0", port=port)
