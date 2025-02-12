@@ -1,0 +1,13 @@
+fastapi
+redis
+pybreaker
+psycopg2-binary
+python-dotenv
+pydantic_settings
+pyjwt
+passlib
+uvicorn
+tortoise-orm
+aerich
+asyncpg
+enum
